@@ -21,3 +21,5 @@ categories: ai math
 [Build GPT from scratch](https://www.youtube.com/watch?v=kCc8FmEb1nY)
 
 [A Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html)
+
+[Karpathy's Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero)
