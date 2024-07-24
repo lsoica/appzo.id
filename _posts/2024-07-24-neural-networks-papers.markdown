@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Neural Networks Papers"
+date:   2024-07-24 11:08:03 +0200
+categories: ai
+---
+["Language Models are Unsupervised Multitask Learners"](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
