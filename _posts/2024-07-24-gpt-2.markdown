@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "GPT 2"
+date:   2024-07-24 11:08:03 +0200
+categories: ai
+---
+
+# Tokenier
+
+A vocabulary of 50257 tokens.
+Based on tiktoken.
+Vercel app available to tokenize in the browser https://tiktokenizer.vercel.app/?model=gpt2
+
+Based on UTF-8 encoding and byte-pair encoding algorithm:
+* start with a string to tokenize
+* get the utf-8 byte array for the string (elements between 0-255)
+* count the occurences for each consecutive byte-pair
+* for the pair with the max occurence, replace it with the next available ID (256 for the first replacement)
+* now the vocabulary size is +1 but the input is shorter
+* reiterate until you reach a desired vocabulary size
+
+raw text <-> Unicode sequence <-> tokenizer <-> token sequence <-> LLM
+
+
+# Embedding table
+
+Encoding of the vocabulary: 50257 rows, one for each token, with ? columns, the dimension of the embedding vector.
+Embeddings are trainable parameters of the model, similar tokens end up close to each other in the embeddings space.
+
+# Attention layer
+
+The context size is 1024 tokens so in the attention layer a token is connected to at most the previous 1023 tokens.
