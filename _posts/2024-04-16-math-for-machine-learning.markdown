@@ -23,3 +23,5 @@ categories: ai math
 [A Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html)
 
 [Karpathy's Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero)
+
+[Google Deepmind: The Elements of Differentiable Programming](https://arxiv.org/pdf/2403.14606)
