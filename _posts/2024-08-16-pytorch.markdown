@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "PyTorch"
+date:   2024-08-16 11:08:03 +0200
+categories: ai
+---
+
+# Broadcasting semantics
+
+Q: Can I divide a 27x27 matrix by a 27x1 ?
+A: Yes, it will be broadcasted.
+
+[Broadcasting semantics](https://pytorch.org/docs/stable/notes/broadcasting.html)
+
+```
+Two tensors are “broadcastable” if the following rules hold:
+
+Each tensor has at least one dimension.
+
+When iterating over the dimension sizes, starting at the trailing dimension, the dimension sizes must either be equal, one of them is 1, or one of them does not exist.
+```
+
+# Pytorch multinomial
+
+Q: How to sample from a multinomial distribution?
+A: Use [torch.multinomial](https://pytorch.org/docs/stable/generated/torch.multinomial.html)
+
+# Likelihood
+
+We have a model with probabilities assigned for each possible bigram. And we have known words that are composed of these bigrams. We want the product of all these probabilities for bigrams found in words to be as high as possible. That's the likelihood.
+
+Now, because the probabilities are between 0 and 1, we can't multiply them together directly as we will end up with a very small number. But we can add the logarithm of each probability. This is called the [log-likelihood](https://en.wikipedia.org/wiki/Log_likelihood).
+
+log(a*b*c) = log(a)+log(b)+log(c)
+
+The hgher the probabilities, the higher the likelihood. But because for a loss function lower is better, we want to maximize the likelihood and not minimize. Hence, we use negative of the log-likelihood as our loss function.
+
+Some would prefer to use an average nll.
+
+GOAL: minimize the average negative log likelihood.
+
+For out training set, the average negative log likelihood is 2.4541.
+
+# Model as a neural network
+
+PyTorch has Tensor and tensor. We'll use tensor.
