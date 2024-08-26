@@ -64,8 +64,8 @@ lrs = 10**lre
 ```
 
 This will be between 0.001 and 1, but exponentiated.
-![alt text](image.png)
+![alt text](/assets/images/image.png)
 
 Run a training loop with the dynamic learning rate, save the loss and plot it. You get something like this:
-![alt text](image-1.png)
+![alt text](/assets/images/image-1.png)
 So the best rate is between the -1 and -0.5 exponent of 10.
