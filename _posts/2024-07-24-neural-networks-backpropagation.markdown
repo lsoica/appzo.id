@@ -53,3 +53,19 @@ A chaining of multiple layers: An input layer, 0 to multiple hidden layers and t
 A forward pass: we take a set of input values and forward pass through the entire network. There's an activation function at the end with the main goal of squashing the values. Why do we need squashing: to make sure that the output is bounded between 0 and 1. We call the output of this layer the activations. Multiple samples are processed in parallel in a batch and a loss or cost function is computed over the predictions of each sample versus the extected values.
 
 Backward propagation is called on the loss function to calculate the gradients for each parameter over the entire batch. Based on the gradients, we update the parameters in the direction that reduces the loss (the gradient descent).
+
+# How to choose a proper learning rate?
+
+Instead of a static learning rate, build a dynamic learning rate with the powers of 10 between -3 and 0; 1000 of them
+
+```
+lre = torch.linspace(-3, 0, 1000)
+lrs = 10**lre
+```
+
+This will be between 0.001 and 1, but exponentiated.
+![alt text](image.png)
+
+Run a training loop with the dynamic learning rate, save the loss and plot it. You get something like this:
+![alt text](image-1.png)
+So the best rate is between the -1 and -0.5 exponent of 10.

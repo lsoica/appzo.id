@@ -44,3 +44,13 @@ For out training set, the average negative log likelihood is 2.4541.
 # Model as a neural network
 
 PyTorch has Tensor and tensor. We'll use tensor.
+
+# MLP - Multi layer perceptron
+
+We have a vocabulary of 17000 words. We want to map each works into a 30 dimensional vector. That's the size of the embedding matrix. The input is the word index, and the output is the embedding for that word. We keep the embeddings into a matrix called C.
+
+# Cross entropy
+
+The sequence: logits -> exponentiate -> probability -> loss can be replaced with F.cross_entropy(logits, Y)
+
+[PyTorch Cross entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.functional.cross_entropy.html#torch.nn.functional.cross_entropy)
