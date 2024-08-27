@@ -69,3 +69,10 @@ This will be between 0.001 and 1, but exponentiated.
 Run a training loop with the dynamic learning rate, save the loss and plot it. You get something like this:
 ![alt text](/assets/images/image-1.png)
 So the best rate is between the -1 and -0.5 exponent of 10.
+
+# How to arrange the data
+
+Have 3 splits for the dataset:
+- Training set (80%) - used to optimize the parameters
+- Validation set (10%) - used for development of the hiperparameters (size of the emb, batch etc)
+- Test set (10%) - used at the end to test the final model.
