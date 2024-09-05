@@ -76,3 +76,52 @@ Have 3 splits for the dataset:
 - Training set (80%) - used to optimize the parameters
 - Validation set (10%) - used for development of the hiperparameters (size of the emb, batch etc)
 - Test set (10%) - used at the end to test the final model.
+
+# Logits
+
+The logits are the raw output of the neural network before passing them through an activation function.
+
+# Activation functions
+
+An activation function is used to introduce non-linearity in the model, and it's usually applied at the end of the linear part of the network. Examples of activation functions are: ReLU, LeakyReLU, ELU, SELU, Sigmoid, Tanh and many more.
+
+The distribution for a not-normalized activation function for 32 samples on 200 newurons
+![Activation function distribution](/assets/images/image-2.png)
+This is triggered by the preactivations that are widely distributed. Whatever is lower than -1 is squashed into -1 and whatever is higher than +1 is squashed into +1.
+![preactivations](/assets/images/image-3.png)
+
+The problem is that during differentiatiation, in 1 and -1, it goes to 0 and makes the network untrainable, that newuron will not learn anything. It's called a dead neuron.
+
+How to solve it: normalize at initialization the parameters that contribute to the preactivations:
+
+```
+W1 = torch.randn((block_size * n_embed, n_hidden), generator=g) * 0.2
+b1 = torch.randn(n_hidden, generator=g) * 0.01
+```
+
+# Softmax
+
+The softmax is a normalizing function that converts the logits into probabilities. At the beginning the softmax can be confidently wrong. That's because the parameters are not normalized and the preactivations are widely distributed. 
+
+How to solve it: normalize at initialization the parameters that contribute to the logits, hence softmax:
+```
+W2 = torch.randn((n_hidden, vocab_size), generator=g) * 0.01
+b2 = torch.randn(vocab_size, generator=g) * 0
+```
+
+# Normalization
+
+How to get rid of the magic numbers used in the previous examples? What we want is a unit gaussian data distribution. That means, a standard deviation of one.
+
+Divide the parameters by the square root of the fan-in. The fan-in is the number of inputs that a neuron receives. Multiple it with a gain, that in case of tanh is 5/3. See [torch.nn.init
+](https://pytorch.org/docs/stable/nn.init.html)
+
+## Batch normalization
+
+Normalize the preactivation to be unit gaussian. The mean and standard deviation are computed over the batch dimension.
+
+```
+    hpreact = bngain * ((hpreact - hpreact.mean(0, keepdim=True))/hpreact.std(0, keepdim=True)) + bnbias
+```
+
+bngain and bnbias are learnable parameters introduced in order to allow the training to go outside of the unit gaussian.
