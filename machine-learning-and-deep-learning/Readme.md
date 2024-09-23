@@ -62,20 +62,20 @@ Predict an object class (e.g., cat or dog)
 
 ## 01
 
-{% jupyter_notebook "00-pytorch.ipynb" %}
+`00-pytorch.ipynb`
 
 # 02
 
-{% jupyter_notebook "01-regression-model.ipynb" %}
+`01-regression-model.ipynb`
 
 # 03
 
-{% jupyter_notebook "02-classification-model-binary.ipynb" %}
+`02-classification-model-binary.ipynb`
 
 # 04
 
-{% jupyter_notebook "03-classification-model-multi-class.ipynb" %}
+`03-classification-model-multi-class.ipynb`
 
 # 05
 
-{% jupyter_notebook "05-custom-datasets.ipynb" %}
+`05-custom-datasets.ipynb`
