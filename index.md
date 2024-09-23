@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: sidebar-layout
 title: Appzoid
 ---
 
@@ -23,26 +23,6 @@ Feel free to follow me on:
   {% endfor %}
 </ul>
 
-## Categories
-
-<ul>
-  {% for category in site.categories %}
-    <li>
-      <a href="/categories/{{ category[0] }}">{{ category[0] }}</a>
-    </li>
-  {% endfor %}
-</ul>
-
-## Archive
-
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <small>{{ post.date | date: "%B %d, %Y" }}</small>
-    </li>
-  {% endfor %}
-</ul>
 
 ## Subscribe
 

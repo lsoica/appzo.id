@@ -1,8 +1,7 @@
 ---
-layout: post
+layout: sidebar-layout
 title:  "Neural Networks Backpropagation"
 date:   2024-07-24 11:08:03 +0200
-categories: ai
 ---
 
 # Gradient

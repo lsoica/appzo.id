@@ -1,3 +1,9 @@
+---
+layout: sidebar-layout
+title:  "ML and DL with PyTorch"
+date:   2024-08-16 11:08:03 +0200
+---
+
 # Intro
 
 Deep learning is a subcategory of machine learning that uses neural networks. It is used to solve problems in computer vision, natural language processing and speech recognition.
@@ -51,3 +57,25 @@ Predict an object class (e.g., cat or dog)
 # Log anomaly detection
 
 [Loglizer](https://github.com/logpai/loglizer/tree/master)
+
+# Experiments
+
+## 01
+
+{% jupyter_notebook "00-pytorch.ipynb" %}
+
+# 02
+
+{% jupyter_notebook "01-regression-model.ipynb" %}
+
+# 03
+
+{% jupyter_notebook "02-classification-model-binary.ipynb" %}
+
+# 04
+
+{% jupyter_notebook "03-classification-model-multi-class.ipynb" %}
+
+# 05
+
+{% jupyter_notebook "05-custom-datasets.ipynb" %}

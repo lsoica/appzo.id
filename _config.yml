@@ -6,13 +6,14 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://appzo.id"
 twitter_username: lsoica
 github_username:  lsoica
-permalink: /:categories/:year/:month/:day/:title
+# permalink: /:categories/:year/:month/:day/:title
 
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-jupyter-notebook
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
