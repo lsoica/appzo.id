@@ -2,3 +2,12 @@ _site
 .sass-cache
 .jekyll-metadata
 .venv
+
+**/data/*
+*.csv
+**/__pycache__/*
+**/model.safetensors
+**/vocab*
+**/*.pth
+**/input.txt
+

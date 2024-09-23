@@ -25,3 +25,5 @@ categories: ai math
 [Karpathy's Neural Networks: Zero to Hero](https://github.com/karpathy/nn-zero-to-hero)
 
 [Google Deepmind: The Elements of Differentiable Programming](https://arxiv.org/pdf/2403.14606)
+
+[Understanding Calculus: Problems, Solutions, and Tips](https://www.thegreatcourses.com/courses/understanding-calculus-problems-solutions-and-tips)
