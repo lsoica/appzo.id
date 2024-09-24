@@ -29,4 +29,4 @@ A pooling mechanism is applied to reduce the token-level embeddings into a singl
 
 ## Implementation
 
-`rag.ipynb`
+{% jupyter_notebook "rag.ipynb" %}
