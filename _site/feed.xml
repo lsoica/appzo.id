@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://appzo.id/feed.xml" rel="self" type="application/atom+xml" /><link href="https://appzo.id/" rel="alternate" type="text/html" /><updated>2024-09-24T11:48:51+03:00</updated><id>https://appzo.id/feed.xml</id><title type="html">Appzoid</title><subtitle>Lorem Ipsum</subtitle><entry><title type="html">Learning Neural Nets</title><link href="https://appzo.id/2024/09/23/learning-neural-networks.html" rel="alternate" type="text/html" title="Learning Neural Nets" /><published>2024-09-23T12:08:03+03:00</published><updated>2024-09-23T12:08:03+03:00</updated><id>https://appzo.id/2024/09/23/learning-neural-networks</id><content type="html" xml:base="https://appzo.id/2024/09/23/learning-neural-networks.html">&lt;h1 id=&quot;linear-algebra&quot;&gt;Linear Algebra&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=fNk_zzaMoSs&amp;amp;list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&quot;&gt;Linear Algebra&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=0z6AhrOSrRs&quot;&gt;Mathematics for Machine Learning&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://transformer-circuits.pub/2021/framework/index.html&quot;&gt;A Mathematical Framework for Transformer Circuits&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;calculus&quot;&gt;Calculus&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=WUvTyaaNkzM&amp;amp;list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr&quot;&gt;Calculus&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://openlearninglibrary.mit.edu/courses/course-v1:MITx+18.01.1x+2T2019/course/&quot;&gt;MIT Calculus 1A: Differentiation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.thegreatcourses.com/courses/understanding-calculus-problems-solutions-and-tips&quot;&gt;Understanding Calculus: Problems, Solutions, and Tips&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;differentiable-programming&quot;&gt;Differentiable Programming&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/2403.14606&quot;&gt;Google Deepmind: The Elements of Differentiable Programming&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;neural-networks&quot;&gt;Neural Networks&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Word_n-gram_language_model&quot;&gt;Before Language Models - N-Ggram&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&quot;&gt;Neural Networks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/karpathy/nn-zero-to-hero&quot;&gt;Karpathy’s Neural Networks: Zero to Hero&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=kCc8FmEb1nY&quot;&gt;Build GPT from scratch&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;lanuage-modeling&quot;&gt;Lanuage modeling&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=1il-s4mgNdI&quot;&gt;Language Modeling&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Linear Algebra</summary></entry><entry><title type="html">Learning Neural Nets</title><link href="https://appzo.id/2024/09/23/tools.html" rel="alternate" type="text/html" title="Learning Neural Nets" /><published>2024-09-23T12:08:03+03:00</published><updated>2024-09-23T12:08:03+03:00</updated><id>https://appzo.id/2024/09/23/tools</id><content type="html" xml:base="https://appzo.id/2024/09/23/tools.html">&lt;h1 id=&quot;tools&quot;&gt;Tools&lt;/h1&gt;</content><author><name></name></author><summary type="html">Tools</summary></entry><entry><title type="html">PyTorch</title><link href="https://appzo.id/2024/08/16/pytorch.html" rel="alternate" type="text/html" title="PyTorch" /><published>2024-08-16T12:08:03+03:00</published><updated>2024-08-16T12:08:03+03:00</updated><id>https://appzo.id/2024/08/16/pytorch</id><content type="html" xml:base="https://appzo.id/2024/08/16/pytorch.html">&lt;h1 id=&quot;broadcasting-semantics&quot;&gt;Broadcasting semantics&lt;/h1&gt;
+
+&lt;p&gt;Q: Can I divide a 27x27 matrix by a 27x1 ?
+A: Yes, it will be broadcasted.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pytorch.org/docs/stable/notes/broadcasting.html&quot;&gt;Broadcasting semantics&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Two tensors are “broadcastable” if the following rules hold:
+
+Each tensor has at least one dimension.
+
+When iterating over the dimension sizes, starting at the trailing dimension, the dimension sizes must either be equal, one of them is 1, or one of them does not exist.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;pytorch-multinomial&quot;&gt;Pytorch multinomial&lt;/h1&gt;
+
+&lt;p&gt;Q: How to sample from a multinomial distribution?
+A: Use &lt;a href=&quot;https://pytorch.org/docs/stable/generated/torch.multinomial.html&quot;&gt;torch.multinomial&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;likelihood&quot;&gt;Likelihood&lt;/h1&gt;
+
+&lt;p&gt;We have a model with probabilities assigned for each possible bigram. And we have known words that are composed of these bigrams. We want the product of all these probabilities for bigrams found in words to be as high as possible. That’s the likelihood.&lt;/p&gt;
+
+&lt;p&gt;Now, because the probabilities are between 0 and 1, we can’t multiply them together directly as we will end up with a very small number. But we can add the logarithm of each probability. This is called the &lt;a href=&quot;https://en.wikipedia.org/wiki/Log_likelihood&quot;&gt;log-likelihood&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;log(a&lt;em&gt;b&lt;/em&gt;c) = log(a)+log(b)+log(c)&lt;/p&gt;
+
+&lt;p&gt;The hgher the probabilities, the higher the likelihood. But because for a loss function lower is better, we want to maximize the likelihood and not minimize. Hence, we use negative of the log-likelihood as our loss function.&lt;/p&gt;
+
+&lt;p&gt;Some would prefer to use an average nll.&lt;/p&gt;
+
+&lt;p&gt;GOAL: minimize the average negative log likelihood.&lt;/p&gt;
+
+&lt;p&gt;For out training set, the average negative log likelihood is 2.4541.&lt;/p&gt;
+
+&lt;h1 id=&quot;model-as-a-neural-network&quot;&gt;Model as a neural network&lt;/h1&gt;
+
+&lt;p&gt;PyTorch has Tensor and tensor. We’ll use tensor.&lt;/p&gt;
+
+&lt;h1 id=&quot;mlp---multi-layer-perceptron&quot;&gt;MLP - Multi layer perceptron&lt;/h1&gt;
+
+&lt;p&gt;We have a vocabulary of 17000 words. We want to map each works into a 30 dimensional vector. That’s the size of the embedding matrix. The input is the word index, and the output is the embedding for that word. We keep the embeddings into a matrix called C.&lt;/p&gt;
+
+&lt;h1 id=&quot;cross-entropy&quot;&gt;Cross entropy&lt;/h1&gt;
+
+&lt;p&gt;The sequence: logits -&amp;gt; exponentiate -&amp;gt; probability -&amp;gt; loss can be replaced with F.cross_entropy(logits, Y)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pytorch.org/docs/stable/generated/torch.nn.functional.cross_entropy.html#torch.nn.functional.cross_entropy&quot;&gt;PyTorch Cross entropy loss&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Broadcasting semantics</summary></entry><entry><title type="html">PyTorch</title><link href="https://appzo.id/2024/08/16/rag.html" rel="alternate" type="text/html" title="PyTorch" /><published>2024-08-16T12:08:03+03:00</published><updated>2024-08-16T12:08:03+03:00</updated><id>https://appzo.id/2024/08/16/rag</id><content type="html" xml:base="https://appzo.id/2024/08/16/rag.html">&lt;p&gt;&lt;a href=&quot;/rag-in-pure-python/readme.html&quot;&gt;Rag In Pure Python&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Rag In Pure Python</summary></entry><entry><title type="html">LLM Models</title><link href="https://appzo.id/2024/07/24/llm-models.html" rel="alternate" type="text/html" title="LLM Models" /><published>2024-07-24T12:08:03+03:00</published><updated>2024-07-24T12:08:03+03:00</updated><id>https://appzo.id/2024/07/24/llm-models</id><content type="html" xml:base="https://appzo.id/2024/07/24/llm-models.html">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=bZQun8Y4L2A&quot;&gt;Source Video&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;stages&quot;&gt;Stages&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pre-training -&amp;gt; Base model&lt;/li&gt;
+  &lt;li&gt;Supervised training -&amp;gt; SFT model (assistants, for example the ChatGPT is an assistent on top of the GPT4 base model)&lt;/li&gt;
+  &lt;li&gt;Reward modeling  -&amp;gt; RM model (humans choosing from multiple completions for a prompt, ranking them and then the model is * retrained to match the human’s choice)&lt;/li&gt;
+  &lt;li&gt;Reinforcement learning -&amp;gt; RL model (based on the rewards given for each completion, lower the tokens part of a non rewarded completion and increase the rewarded ones)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=l8pRSuU81PU&quot;&gt;Source Video&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;gpt-2&quot;&gt;GPT-2&lt;/h1&gt;
+
+&lt;p&gt;A vocabulary of 50257 tokens.
+Based on tiktoken.
+Vercel app available to tokenize in the browser https://tiktokenizer.vercel.app/?model=gpt2&lt;/p&gt;
+
+&lt;p&gt;Based on UTF-8 encoding and byte-pair encoding algorithm:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;start with a string to tokenize&lt;/li&gt;
+  &lt;li&gt;get the utf-8 byte array for the string (elements between 0-255)&lt;/li&gt;
+  &lt;li&gt;count the occurences for each consecutive byte-pair&lt;/li&gt;
+  &lt;li&gt;for the pair with the max occurence, replace it with the next available ID (256 for the first replacement)&lt;/li&gt;
+  &lt;li&gt;now the vocabulary size is +1 but the input is shorter&lt;/li&gt;
+  &lt;li&gt;reiterate until you reach a desired vocabulary size&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;raw text &amp;lt;-&amp;gt; Unicode sequence &amp;lt;-&amp;gt; tokenizer &amp;lt;-&amp;gt; token sequence &amp;lt;-&amp;gt; LLM&lt;/p&gt;
+
+&lt;h1 id=&quot;embedding-table&quot;&gt;Embedding table&lt;/h1&gt;
+
+&lt;p&gt;Encoding of the vocabulary: 50257 rows, one for each token, with ? columns, the dimension of the embedding vector.
+Embeddings are trainable parameters of the model, similar tokens end up close to each other in the embeddings space.&lt;/p&gt;
+
+&lt;h1 id=&quot;attention-layer&quot;&gt;Attention layer&lt;/h1&gt;
+
+&lt;p&gt;The context size is 1024 tokens so in the attention layer a token is connected to at most the previous 1023 tokens.&lt;/p&gt;
+
+&lt;h1 id=&quot;training-speed-ups&quot;&gt;Training speed ups&lt;/h1&gt;
+
+&lt;p&gt;A Mac M2 has 3.6 TFLOPs (trillion floating point operations per second) on 160 execution units or 1280 ALUs.
+Note: floating point is used instead of integers in order to model probability distributions.&lt;/p&gt;
+
+&lt;p&gt;Autocast not yet available in torch for MPS https://github.com/pytorch/pytorch/pull/99272 so can’t use bflops16&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/2205.14135&quot;&gt;FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness&lt;/a&gt;
+&lt;a href=&quot;https://arxiv.org/pdf/2307.08691&quot;&gt;FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning&lt;/a&gt;
+&lt;a href=&quot;https://arxiv.org/pdf/1805.02867&quot;&gt;Online normalizer calculation for softmax&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;ddp---distributed-data-parallel&quot;&gt;DDP - Distributed Data Parallel&lt;/h1&gt;
+
+&lt;p&gt;Distribute processing across multiple machines and GPUs.
+Local rank: the rank of the GPU on a single machine, starting from 0.
+Global rank: the rank of the GPU across all machines, starting from 0.&lt;/p&gt;
+
+&lt;p&gt;PyTorch provides DistributedDataParallel (DDP) which is a wrapper around torch.nn.parallel.DistributedDataParallel that handles the communication between processes.&lt;/p&gt;
+
+&lt;p&gt;A model is wrapped in DDP and then:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;nothing changes on the forward pass&lt;/li&gt;
+  &lt;li&gt;the backward pass is modified to handle gradients from multiple GPUs. It will aggregate (average) the gradients across all GPUs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;datasets&quot;&gt;Datasets&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Tiny Shakespeare&lt;/li&gt;
+  &lt;li&gt;WebText (Open WebText) - used  by OpenAI GPT-2 (~40GB); oudbound links from Reddit comments&lt;/li&gt;
+  &lt;li&gt;Common crawl - ~1TB of text (800M words)&lt;/li&gt;
+  &lt;li&gt;WebText2&lt;/li&gt;
+  &lt;li&gt;RedPajama, SlimPajama&lt;/li&gt;
+  &lt;li&gt;FineWeb, FineWebEdu&lt;/li&gt;
+  &lt;li&gt;Wikipedia&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;loading-finewebedu-dataset&quot;&gt;Loading FineWebEdu dataset&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu&quot;&gt;HiggingFace DataSet&lt;/a&gt;
+Using Python dataset package:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;load the dataset with dataset.load_dataset(‘HuggingFaceFW/fineweb-edu’, split=’train’)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Tokenize each document in the dataset. Each tokenized document starts with &amp;lt;&lt;/td&gt;
+          &lt;td&gt;endoftexttoken&lt;/td&gt;
+          &lt;td&gt;&amp;gt;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Load the tokens into numpy array of type uint64.&lt;/li&gt;
+  &lt;li&gt;Output is saved to shards as numpy files, each with 100 million tokens.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;When loading the tokens:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Load the numpy file.&lt;/li&gt;
+  &lt;li&gt;Convert to torch.Tensor of type long.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;validation&quot;&gt;Validation&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1905.07830&quot;&gt;HellaSwag&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A data set with sentences and 4 potential completions for each, where a single one is correct.&lt;/p&gt;
+
+&lt;p&gt;the sentence is feeded into the model and the probabilities for each of the 4 possible completions areevaluated. The highest probability should be for the correct answer. The individual token probabilities are averaged.&lt;/p&gt;</content><author><name></name></author><summary type="html">Source Video</summary></entry><entry><title type="html">Papers</title><link href="https://appzo.id/2024/07/24/papers.html" rel="alternate" type="text/html" title="Papers" /><published>2024-07-24T12:08:03+03:00</published><updated>2024-07-24T12:08:03+03:00</updated><id>https://appzo.id/2024/07/24/papers</id><content type="html" xml:base="https://appzo.id/2024/07/24/papers.html">&lt;p&gt;&lt;a href=&quot;https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf&quot;&gt;“Language Models are Unsupervised Multitask Learners”&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">“Language Models are Unsupervised Multitask Learners”</summary></entry><entry><title type="html">Computer Vision</title><link href="https://appzo.id/2024/07/24/vision.html" rel="alternate" type="text/html" title="Computer Vision" /><published>2024-07-24T12:08:03+03:00</published><updated>2024-07-24T12:08:03+03:00</updated><id>https://appzo.id/2024/07/24/vision</id><content type="html" xml:base="https://appzo.id/2024/07/24/vision.html"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Neural Networks Backpropagation</title><link href="https://appzo.id/2024/07/24/backpropagation.html" rel="alternate" type="text/html" title="Neural Networks Backpropagation" /><published>2024-07-24T12:08:03+03:00</published><updated>2024-07-24T12:08:03+03:00</updated><id>https://appzo.id/2024/07/24/backpropagation</id><content type="html" xml:base="https://appzo.id/2024/07/24/backpropagation.html">&lt;h1 id=&quot;gradient&quot;&gt;Gradient&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=YS_EztqZCD8&quot;&gt;Video&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The gradient captures all the partial derivative information of a scalar-valued multivariable function. Created by Grant Sanderson.&lt;/p&gt;
+
+&lt;p&gt;A vector of partial derivatives for a multivariate function.&lt;/p&gt;
+
+&lt;p&gt;Gives the direction of steepest ascent (descent) of the function.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-directional-derivative&quot;&gt;The directional derivative&lt;/h2&gt;
+
+&lt;p&gt;The directional derivative is the dot product between the gradient and the unit vector in that direction.&lt;/p&gt;
+
+&lt;p&gt;In our case we have the C as the cost function, and the partial derivatives for the weights and biases. We want to descent the gradient of the cost function.&lt;/p&gt;
+
+&lt;p&gt;The dimensionality of the gradient space is given by the number of weights and biases for the model.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-chain-rule&quot;&gt;The chain rule&lt;/h2&gt;
+
+&lt;p&gt;The chain rule tells us that the derivative of a composite function is equal to the product of the derivatives of each of its parts.&lt;/p&gt;
+
+&lt;p&gt;df(g(x))/dx = df/dg * dg/dx&lt;/p&gt;
+
+&lt;p&gt;We have a cost function L, and we want to find the partial derivative of L with respect to each parameter. We can do that by using the chain rule:&lt;/p&gt;
+
+&lt;p&gt;if L = f&lt;em&gt;g, and f=h+k =&amp;gt; dL/df = g, dL/dg = f, df/dh = 1, df/dk = 1. Using the chain rule, dL/dh = dL/df&lt;/em&gt;df/dh and so on. dL/dh is the gradient of h; how much does h impact the gradient descent.&lt;/p&gt;
+
+&lt;p&gt;Remarks:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;a plus sign distributes the gradient of a parent to its children.&lt;/li&gt;
+  &lt;li&gt;we can only influence leaf nodes during gradinet descent. In the example above, we can only influence h,k and g&lt;/li&gt;
+  &lt;li&gt;because a parameter can be referenced more than once, the gradients have to be summed up instead of overwritted at parameter level.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;neuron&quot;&gt;Neuron&lt;/h1&gt;
+
+&lt;p&gt;We have n inputs, x-es each with a weight, w-s. And a bias b. Then we have an activation function f, a squashing function. The value of the neuron is f(sum(xi*wi) + b).&lt;/p&gt;
+
+&lt;h1 id=&quot;layer&quot;&gt;Layer&lt;/h1&gt;
+
+&lt;p&gt;A set of n neurons&lt;/p&gt;
+
+&lt;h1 id=&quot;mlp-multi-layer-perceptron&quot;&gt;MLP: multi-layer perceptron&lt;/h1&gt;
+
+&lt;p&gt;A chaining of multiple layers: An input layer, 0 to multiple hidden layers and the output layer. Each neuron in Layer n is connected to each neuron in Layer n-1.&lt;/p&gt;
+
+&lt;p&gt;A forward pass: we take a set of input values and forward pass through the entire network. There’s an activation function at the end with the main goal of squashing the values. Why do we need squashing: to make sure that the output is bounded between 0 and 1. We call the output of this layer the activations. Multiple samples are processed in parallel in a batch and a loss or cost function is computed over the predictions of each sample versus the extected values.&lt;/p&gt;
+
+&lt;p&gt;Backward propagation is called on the loss function to calculate the gradients for each parameter over the entire batch. Based on the gradients, we update the parameters in the direction that reduces the loss (the gradient descent).&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-choose-a-proper-learning-rate&quot;&gt;How to choose a proper learning rate?&lt;/h1&gt;
+
+&lt;p&gt;Instead of a static learning rate, build a dynamic learning rate with the powers of 10 between -3 and 0; 1000 of them&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lre = torch.linspace(-3, 0, 1000)
+lrs = 10**lre
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This will be between 0.001 and 1, but exponentiated.
+&lt;img src=&quot;/assets/images/image.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Run a training loop with the dynamic learning rate, save the loss and plot it. You get something like this:
+&lt;img src=&quot;/assets/images/image-1.png&quot; alt=&quot;alt text&quot; /&gt;
+So the best rate is between the -1 and -0.5 exponent of 10.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-arrange-the-data&quot;&gt;How to arrange the data&lt;/h1&gt;
+
+&lt;p&gt;Have 3 splits for the dataset:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Training set (80%) - used to optimize the parameters&lt;/li&gt;
+  &lt;li&gt;Validation set (10%) - used for development of the hiperparameters (size of the emb, batch etc)&lt;/li&gt;
+  &lt;li&gt;Test set (10%) - used at the end to test the final model.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;logits&quot;&gt;Logits&lt;/h1&gt;
+
+&lt;p&gt;The logits are the raw output of the neural network before passing them through an activation function.&lt;/p&gt;
+
+&lt;h1 id=&quot;activation-functions&quot;&gt;Activation functions&lt;/h1&gt;
+
+&lt;p&gt;An activation function is used to introduce non-linearity in the model, and it’s usually applied at the end of the linear part of the network. Examples of activation functions are: ReLU, LeakyReLU, ELU, SELU, Sigmoid, Tanh and many more.&lt;/p&gt;
+
+&lt;p&gt;The distribution for a not-normalized activation function for 32 samples on 200 newurons
+&lt;img src=&quot;/assets/images/image-2.png&quot; alt=&quot;Activation function distribution&quot; /&gt;
+This is triggered by the preactivations that are widely distributed. Whatever is lower than -1 is squashed into -1 and whatever is higher than +1 is squashed into +1.
+&lt;img src=&quot;/assets/images/image-3.png&quot; alt=&quot;preactivations&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The problem is that during differentiatiation, in 1 and -1, it goes to 0 and makes the network untrainable, that newuron will not learn anything. It’s called a dead neuron.&lt;/p&gt;
+
+&lt;p&gt;How to solve it: normalize at initialization the parameters that contribute to the preactivations:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;W1 = torch.randn((block_size * n_embed, n_hidden), generator=g) * 0.2
+b1 = torch.randn(n_hidden, generator=g) * 0.01
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;softmax&quot;&gt;Softmax&lt;/h1&gt;
+
+&lt;p&gt;The softmax is a normalizing function that converts the logits into probabilities. At the beginning the softmax can be confidently wrong. That’s because the parameters are not normalized and the preactivations are widely distributed.&lt;/p&gt;
+
+&lt;p&gt;How to solve it: normalize at initialization the parameters that contribute to the logits, hence softmax:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;W2 = torch.randn((n_hidden, vocab_size), generator=g) * 0.01
+b2 = torch.randn(vocab_size, generator=g) * 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;normalization&quot;&gt;Normalization&lt;/h1&gt;
+
+&lt;p&gt;How to get rid of the magic numbers used in the previous examples? What we want is a unit gaussian data distribution. That means, a standard deviation of one.&lt;/p&gt;
+
+&lt;p&gt;Divide the parameters by the square root of the fan-in. The fan-in is the number of inputs that a neuron receives. Multiple it with a gain, that in case of tanh is 5/3. See &lt;a href=&quot;https://pytorch.org/docs/stable/nn.init.html&quot;&gt;torch.nn.init
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;batch-normalization&quot;&gt;Batch normalization&lt;/h2&gt;
+
+&lt;p&gt;Normalize the preactivation to be unit gaussian. The mean and standard deviation are computed over the batch dimension.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    hpreact = bngain * ((hpreact - hpreact.mean(0, keepdim=True))/hpreact.std(0, keepdim=True)) + bnbias
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;bngain and bnbias are learnable parameters introduced in order to allow the training to go outside of the unit gaussian.&lt;/p&gt;</content><author><name></name></author><summary type="html">Gradient</summary></entry></feed>

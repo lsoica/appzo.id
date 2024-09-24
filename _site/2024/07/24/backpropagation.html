@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neural Networks Backpropagation</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #f4f4f4;
+      padding: 20px;
+      position: fixed;
+      height: 100vh;
+      top: 0;
+      left: 0;
+    }
+
+    .content-wrapper {
+      margin-left: 220px; /* Ensure space for the sidebar */
+      padding: 20px;
+      width: calc(100% - 220px); /* Prevent overflow beyond viewport */
+      box-sizing: border-box;
+    }
+
+    .content {
+      max-width: 100%; /* Make sure content doesn't exceed available width */
+      padding: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 10px 0;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: #ddd;
+    }
+
+    .category-list, .post-list {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2><a href="">Appzoid</a></h2>
+    <a href="/2024/09/23/learning-neural-networks">Learning Neural Nets</a>
+    <a href="/2024/07/24/llm-models">Large Language Models</a>
+    <a href="/2024/07/24/vision">Computer Vision</a>
+    <a href="/2024/08/16/pytorch">PyTorch</a>
+    <a href="/2024/08/16/rag">RAG</a>
+    <a href="/2024/07/24/backpropagation">Backpropagation</a>
+    <a href="/machine-learning-and-deep-learning/readme.html">ML and DL with PyTorch</a>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="content">
+      <h1 id="gradient">Gradient</h1>
+
+<p><a href="https://www.youtube.com/watch?v=YS_EztqZCD8">Video</a></p>
+
+<p>The gradient captures all the partial derivative information of a scalar-valued multivariable function. Created by Grant Sanderson.</p>
+
+<p>A vector of partial derivatives for a multivariate function.</p>
+
+<p>Gives the direction of steepest ascent (descent) of the function.</p>
+
+<h2 id="the-directional-derivative">The directional derivative</h2>
+
+<p>The directional derivative is the dot product between the gradient and the unit vector in that direction.</p>
+
+<p>In our case we have the C as the cost function, and the partial derivatives for the weights and biases. We want to descent the gradient of the cost function.</p>
+
+<p>The dimensionality of the gradient space is given by the number of weights and biases for the model.</p>
+
+<h2 id="the-chain-rule">The chain rule</h2>
+
+<p>The chain rule tells us that the derivative of a composite function is equal to the product of the derivatives of each of its parts.</p>
+
+<p>df(g(x))/dx = df/dg * dg/dx</p>
+
+<p>We have a cost function L, and we want to find the partial derivative of L with respect to each parameter. We can do that by using the chain rule:</p>
+
+<p>if L = f<em>g, and f=h+k =&gt; dL/df = g, dL/dg = f, df/dh = 1, df/dk = 1. Using the chain rule, dL/dh = dL/df</em>df/dh and so on. dL/dh is the gradient of h; how much does h impact the gradient descent.</p>
+
+<p>Remarks:</p>
+<ul>
+  <li>a plus sign distributes the gradient of a parent to its children.</li>
+  <li>we can only influence leaf nodes during gradinet descent. In the example above, we can only influence h,k and g</li>
+  <li>because a parameter can be referenced more than once, the gradients have to be summed up instead of overwritted at parameter level.</li>
+</ul>
+
+<h1 id="neuron">Neuron</h1>
+
+<p>We have n inputs, x-es each with a weight, w-s. And a bias b. Then we have an activation function f, a squashing function. The value of the neuron is f(sum(xi*wi) + b).</p>
+
+<h1 id="layer">Layer</h1>
+
+<p>A set of n neurons</p>
+
+<h1 id="mlp-multi-layer-perceptron">MLP: multi-layer perceptron</h1>
+
+<p>A chaining of multiple layers: An input layer, 0 to multiple hidden layers and the output layer. Each neuron in Layer n is connected to each neuron in Layer n-1.</p>
+
+<p>A forward pass: we take a set of input values and forward pass through the entire network. There’s an activation function at the end with the main goal of squashing the values. Why do we need squashing: to make sure that the output is bounded between 0 and 1. We call the output of this layer the activations. Multiple samples are processed in parallel in a batch and a loss or cost function is computed over the predictions of each sample versus the extected values.</p>
+
+<p>Backward propagation is called on the loss function to calculate the gradients for each parameter over the entire batch. Based on the gradients, we update the parameters in the direction that reduces the loss (the gradient descent).</p>
+
+<h1 id="how-to-choose-a-proper-learning-rate">How to choose a proper learning rate?</h1>
+
+<p>Instead of a static learning rate, build a dynamic learning rate with the powers of 10 between -3 and 0; 1000 of them</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lre = torch.linspace(-3, 0, 1000)
+lrs = 10**lre
+</code></pre></div></div>
+
+<p>This will be between 0.001 and 1, but exponentiated.
+<img src="/assets/images/image.png" alt="alt text" /></p>
+
+<p>Run a training loop with the dynamic learning rate, save the loss and plot it. You get something like this:
+<img src="/assets/images/image-1.png" alt="alt text" />
+So the best rate is between the -1 and -0.5 exponent of 10.</p>
+
+<h1 id="how-to-arrange-the-data">How to arrange the data</h1>
+
+<p>Have 3 splits for the dataset:</p>
+<ul>
+  <li>Training set (80%) - used to optimize the parameters</li>
+  <li>Validation set (10%) - used for development of the hiperparameters (size of the emb, batch etc)</li>
+  <li>Test set (10%) - used at the end to test the final model.</li>
+</ul>
+
+<h1 id="logits">Logits</h1>
+
+<p>The logits are the raw output of the neural network before passing them through an activation function.</p>
+
+<h1 id="activation-functions">Activation functions</h1>
+
+<p>An activation function is used to introduce non-linearity in the model, and it’s usually applied at the end of the linear part of the network. Examples of activation functions are: ReLU, LeakyReLU, ELU, SELU, Sigmoid, Tanh and many more.</p>
+
+<p>The distribution for a not-normalized activation function for 32 samples on 200 newurons
+<img src="/assets/images/image-2.png" alt="Activation function distribution" />
+This is triggered by the preactivations that are widely distributed. Whatever is lower than -1 is squashed into -1 and whatever is higher than +1 is squashed into +1.
+<img src="/assets/images/image-3.png" alt="preactivations" /></p>
+
+<p>The problem is that during differentiatiation, in 1 and -1, it goes to 0 and makes the network untrainable, that newuron will not learn anything. It’s called a dead neuron.</p>
+
+<p>How to solve it: normalize at initialization the parameters that contribute to the preactivations:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>W1 = torch.randn((block_size * n_embed, n_hidden), generator=g) * 0.2
+b1 = torch.randn(n_hidden, generator=g) * 0.01
+</code></pre></div></div>
+
+<h1 id="softmax">Softmax</h1>
+
+<p>The softmax is a normalizing function that converts the logits into probabilities. At the beginning the softmax can be confidently wrong. That’s because the parameters are not normalized and the preactivations are widely distributed.</p>
+
+<p>How to solve it: normalize at initialization the parameters that contribute to the logits, hence softmax:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>W2 = torch.randn((n_hidden, vocab_size), generator=g) * 0.01
+b2 = torch.randn(vocab_size, generator=g) * 0
+</code></pre></div></div>
+
+<h1 id="normalization">Normalization</h1>
+
+<p>How to get rid of the magic numbers used in the previous examples? What we want is a unit gaussian data distribution. That means, a standard deviation of one.</p>
+
+<p>Divide the parameters by the square root of the fan-in. The fan-in is the number of inputs that a neuron receives. Multiple it with a gain, that in case of tanh is 5/3. See <a href="https://pytorch.org/docs/stable/nn.init.html">torch.nn.init
+</a></p>
+
+<h2 id="batch-normalization">Batch normalization</h2>
+
+<p>Normalize the preactivation to be unit gaussian. The mean and standard deviation are computed over the batch dimension.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    hpreact = bngain * ((hpreact - hpreact.mean(0, keepdim=True))/hpreact.std(0, keepdim=True)) + bnbias
+</code></pre></div></div>
+
+<p>bngain and bnbias are learnable parameters introduced in order to allow the training to go outside of the unit gaussian.</p>
+
+    </div>
+  </div>
+
+</body>
+</html>
